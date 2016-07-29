@@ -282,13 +282,13 @@ textarea {
 }
 .discussion {
   list-style: none;
-  background: rgba(229,229,229, .5);
   margin: 0;
   padding: 0 0 50px 0;
   height: max-content;
 }
 .pre-scrollable{
-  height: 700px;
+  height: 1000px;
+  background: rgba(229,229,229, .5);
 }
 .discussion li {
   padding: 0.5rem;
