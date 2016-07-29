@@ -74,7 +74,6 @@ use Rack::Flash
     post '/logout/?' do
       session.clear
       flash[:notice] = "You have succesfully signed out"
-      @user.update({online: false})
       redirect '/'
     end
 #   end
