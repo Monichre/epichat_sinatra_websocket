@@ -123,7 +123,7 @@ main {
   width: 100%;
   padding: 2%;
   left: 0;
-  bottom: 200px;
+  bottom: 250px;
   color: white;
   font-family: future;
 }
@@ -159,6 +159,14 @@ main {
   padding:0!important;
   font: inherit;
   cursor: pointer;
+}
+
+.glyphicon-home {
+  margin-left: 10px;
+}
+
+#user_home:hover {
+  text-shadow: 1px 1px 1px white;
 }
 .user_button {
   margin: 2%;

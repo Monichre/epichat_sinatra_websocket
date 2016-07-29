@@ -37,6 +37,7 @@ use Rack::Flash
         erb(:"user.html")
       else
         flash[:notice] = "You have been signed out due to inactivity"
+        @user.update({online: false})
         redirect '/'
       end
     end
@@ -52,6 +53,7 @@ use Rack::Flash
         secure_password = Password.create(params['signup_password'])
         @user = User.create({username: params['signup_username'], email: params['signup_email'], password: secure_password})
         session[:id] = @user.id
+        @user.update({online: true})
         redirect '/user'
       end
     end
@@ -60,6 +62,7 @@ use Rack::Flash
       if user = User.authenticate(params)
         @user = user
         session[:id] = @user.id
+        @user.update({online: true})
         redirect '/user'
       else
         flash[:notice] = "Invalid username or password."
@@ -69,6 +72,7 @@ use Rack::Flash
 
     post '/logout/?' do
       session.clear
+      @user.update({online: false})
       flash[:notice] = "You have succesfully signed out"
       redirect '/'
     end

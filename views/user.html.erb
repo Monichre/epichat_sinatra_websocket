@@ -22,9 +22,15 @@
           <ul class="chats">
             <% @users.each do |user| %>
               <%if user != @user %>
-                <li class="chat"> <img class="online_bubble" src="assets/images/chat.png" alt="" />
-                    <%=user.username()%>
-                </li>
+                <%if user.online == true %>
+                  <li class="chat"> <img class="online_bubble" src="assets/images/chat_online.png" alt="" />
+                      <%=user.username()%>
+                  </li>
+                <% else %>
+                  <li class="chat"> <img class="online_bubble" src="assets/images/chat.png" alt="" />
+                      <%=user.username()%>
+                  </li>
+                <% end %><!--end of online? -->
               <% end %>
             <% end %>
           </ul>
