@@ -24,6 +24,7 @@ use Rack::Flash
     end
 
     get "/assets/js/application.js" do # im sure there will be issues here -- >
+      #create message and add it to the conversation_id
       content_type :js
       @scheme = ENV['RACK_ENV'] == "production" ? "wss://" : "ws://"
       erb :"application.js"
@@ -72,8 +73,8 @@ use Rack::Flash
 
     post '/logout/?' do
       session.clear
-      @user.update({online: false})
       flash[:notice] = "You have succesfully signed out"
+      @user.update({online: false})
       redirect '/'
     end
 #   end
