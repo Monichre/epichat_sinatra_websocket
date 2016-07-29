@@ -6,7 +6,7 @@ Ruby: Sinatra app running on Faye server for Epicodus 07.24.2016
 ## By Katarina Tuttle, Liam Ellis, Rony Nasr, and Sebastian Prokuski
 
 ### Online Path:
-(https://agile-castle-57530.herokuapp.com)
+(https://agile-castle-57350.herokuapp.com)
 
 ## Description
 This app allows a user to chat in near real-time with a forum of Epicodus students. Each user's information is saved in the database for later retrieval, and all passwords are encrypted. Future extensions of the program include person to person chat, and distinct chatrooms for different Epicodus classes.

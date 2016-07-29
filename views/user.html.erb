@@ -22,11 +22,17 @@
           <ul class="chats">
             <% @users.each do |user| %>
               <%if user != @user %>
-                <li class="chat"> <img class="online_bubble" src="assets/images/chat.png" alt="" />
-                    <%=user.username()%>
-                </li>
+                <%if user.online == true %>
+                  <li class="chat"> <img class="online_bubble" src="assets/images/chat_online.png" alt="" />
+                      <%=user.username()%>
+                  </li>
+                <% else %>
+                  <li class="chat"> <img class="online_bubble" src="assets/images/chat.png" alt="" />
+                      <%=user.username()%>
+                  </li>
+                <% end %><!--end of online? -->
               <% end %>
-            <% end %>
+            <% end %><!-- end of each -->
           </ul>
         <% end %>
       </div>
@@ -47,16 +53,7 @@
         </header>
         <div class="discussion_with_input">
           <div class="pre-scrollable">
-            <ol id="chat-text" class="discussion">
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-              "<li class='Other'><div class='avatar'><img src='/assets/images/profile.png' alt='profile avatar'/></div><div class='messages'><p>" hello how are you"</p></div></li>"
-            </ol>
+            <ol id="chat-text" class="discussion"></ol>
           </div>
           <div class="message-input">
             <form id="input-form">
